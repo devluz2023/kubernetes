@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-backend-python
+  namespace: app-backend
+spec:
+  selector:
+    matchLabels:
+      name: app-backend-python
+  template:
+    metadata:
+      labels:
+        name: app-backend-python
+    spec:
+      containers:
+        - name: app
+          image: acrappfaluz3.azurecr.io/devluzanalytics:58
+          ports:
+            - containerPort: 5000
